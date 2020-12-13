@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="fr">
+ <head>
+        <title>CV {%if formation %}| Formation : {{formation.nom}} {% endif %}</title>
+    </head>
+    <body>
+        {% if formation %}
+            <h1>{{formation.nom}}</h1>
+            <h2>{{formation.organisme}}</h2>
+            <dl>
+                <dt>Date de début</dt><dd>{{formation.date_debut}}</dd>
+                <dt>Date de fin</dt><dd>{{formation.date_fin}}</dd>
+                <dt>Lieu</dt><dd>{{formation.lieu}}</dd>
+                <dt>Description</dt><dd>{{formation.description}}</dd>
+            </dl>
+        {% else %}
+            <p>La base de données est en cours de constitution</p>
+        {% endif %}
+    <p><a href="{{url_for('home')}}">Retour à l'accueil</a></p>
+    </body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="fr">
+ <head>
+        <title>CV {%if experience %}| Experience : {{experience.poste}} {% endif %}</title>
+    </head>
+    <body>
+        {% if experience %}
+            <h1>{{experience.poste}}</h1>
+            <h2>{{experience.employeur}}</h2>
+            <dl>
+                <dt>Date de début</dt><dd>{{experience.date_debut}}</dd>
+                <dt>Date de fin</dt><dd>{{experience.date_fin}}</dd>
+                <dt>Lieu</dt><dd>{{experience.lieu}}</dd>
+                <dt>Description</dt><dd>{{experience.description}}</dd>
+            </dl>
+        {% else %}
+            <p>La base de données est en cours de constitution</p>
+        {% endif %}
+    <p><a href="{{url_for('home')}}">Retour à l'accueil</a></p>
+    </body>
+</html>

@@ -1,1 +1,1 @@
-Création d'un CV avec le framework Flask
+Création d'un CV en ligne avec le framework Flask.

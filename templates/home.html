@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <title>{{nom}}</title>
+    </head>
+    <body>Bienvenue sur le {{nom}} de Monsieur X !
+    <p>
+            {% if formations %}
+                Monsieur X a suivi {{formations|length}} formations de l'enseignement supérieur, les voici :
+        <ul>
+            {% for formation_id, formation in formations.items() %}
+            <li><a href="{{url_for('formation', study_id=formation_id)}}">{{formation.nom}}</a></li>
+            {% endfor %}
+    </ul>
+            {% endif %}
+
+    </p>
+    <p>
+        {% if experiences %}
+               Monsieur X a occupé {{experiences|length }} postes différents au cours de sa carrière, les voici :
+        <ul>
+            {% for experience_id, experience in experiences.items() %}
+            <li><a href="{{url_for('experience', career_id=experience_id)}}">{{experience.poste}}</a></li>
+            {% endfor %}
+    </ul>
+    {% endif %}
+    </p>
+    </body>
+</html>
